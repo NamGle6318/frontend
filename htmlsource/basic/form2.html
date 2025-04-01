@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <!-- 
+    속성
+        1. value : radio, checkbox, option, submit, reset, button 필수사용, 나머지 선택
+        2. readonly : 값 보는것만 가능, 입력 변경 불가
+        3. required : N-N
+        4. autofocus : focusing의 대상
+        5. disabled : 비활성화 된 듯한 느낌
+        6. size, maxlength : size = box의 길이 / maxlength : 글자수 제한
+        6-1. min, max : 최소값 최대값 설정
+        7. multiple : 파일 - 다중 첨부가능
+        8. pattern : regex를 이용한 입력형식 지정
+            - ex : [a-zA-Z]{3} => 알파벳만 사용가능, 3자리까지 허용
+            - ex : [0-9]{3}-[0-9]{4}-[0-9]{4} => 숫자 3자리 + - +  숫자 4자리 + - + 숫자 4자리
+        9. placehorder : 예시같은 글자를 임시로 띄워줌
+        10. step : 1회 상호작용시 작성한 숫자만큼 올라가고 내려감
+  
+  -->
+  <body>
+
+    <fieldset>
+        <legend>개인정보</legend>
+        txt<input type="text" name="text" id="text">txt
+    </fieldset>
+
+    <form action="" method="get">
+      <div>
+        <input type="submit" value="전송" />
+        <input type="reset" value="초기화" />
+      </div>
+
+      <div>
+        <label for="name">name</label>
+        <input type="text" name="name" id="name" value="홍길동" disabled />
+      </div>
+
+      <div>
+        <label for="age">age <input type="number" name="age" id="나이" value="15" required autofocus min="10" max="100" step="3"/> </label>
+      </div>
+      <div>키 <input type="text" name="키" id="" size="10" maxlength="1" value="167" /></div>
+
+      <div>
+          <label for="가입날짜">
+          가입날짜 <input type="date" name="가입날짜" id="가입날짜" min="2004-01-01" max="2025-04-01" /></div>
+        </label>
+      <div>
+        <label for="gender">
+          성별 <input type="checkbox" name="gender" id="남자" value="남" /> 남
+          <input type="checkbox" name="gender" id="여자" value="여" /> 여
+        </label>
+      </div>
+
+      <div>
+        <select name="fruits" id="">
+          <option value="사과">사과</option>
+          <option value="포도">포도</option>
+          <option value="딸기">딸기</option>
+          <option value="수박">수박</option>
+        </select>
+      </div>
+
+      <div>
+        <input type="file" name="파일" id="" multiple>
+      </div> &nbsp;
+      <input type="text" name="code" id="">
+      <input type="tel" name="tel" id="" pattern="[a-zA-Z]{3}"> 
+      <input type="tel" name="tel" id="" placeholder="010-1234-5678" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"> 
+    </form>
+
+
+  </body>
+</html>

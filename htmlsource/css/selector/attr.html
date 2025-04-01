@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* [target] {
+        text-decoration: none;
+      }
+      [target="_blank"] {
+        color: green;
+      } */
+      [title~="bird"] {
+        border: 5px solid green;
+      }
+      [class^="test"] {
+        background: salmon;
+      }
+      [class$="test"] {
+        background: magenta;
+      }
+      [class*="test"] {
+        background: blueviolet;
+      }
+
+      button {
+        font-weight: bold;
+      }
+      [class^="btn-"] {
+        border-radius: 20px;
+        padding: 10px;
+      }
+      [class$="success"] {
+        color: green;
+      }
+      [class$="danger"] {
+        color: red;
+      }
+      /* 
+      font-weight:bold 굵은 폰트
+      border-radius:20px 테두리 굵기
+      padding:10 안쪽 여백
+      
+      
+      */
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><a href="#" target="_blank">google</a></li>
+      <li><a href="#" target="_blank">naver</a></li>
+      <li><a href="#" target="_self">daum</a></li>
+    </ul>
+
+    <img src="/htmlsource/image/sample.jpg" title="bird" alt="" />
+    <img src="/htmlsource/image/sample.jpg" title="red bird" alt="" />
+    <img src="/htmlsource/image/sample.jpg" title="focus birds" alt="" />
+
+    <div class="testing">First Div</div>
+    <div class="second_test">Second Div</div>
+    <div class="test">Third Div</div>
+    <div class="test_ex">Fourth Div</div>
+
+    <button class="btn-success">success</button>
+    <button class="btn-danger">Danger</button>
+    <button>Normal</button>
+  </body>
+</html>
