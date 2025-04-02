@@ -1,42 +1,77 @@
 <!DOCTYPE html>
 
 <!-- table 사용시 행과 열을 정하고 시작하기 -->
+<!-- CSS적용할때 id나 클래스 다 정하고 하기 -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      table {
+        height: 60vw;
+        width: 100vw;
+      }
+      table,
+      tr,
+      td {
+        border: 1px solid black;
+        text-align: center;
+        border-collapse: collapse;
+      }
+
+      td:first-child {
+        text-align: left !important;
+      }
+
+      table #image_place {
+        background-image: url(/htmlsource/image/sample.jpg);
+        width: 100%;
+        height: 100%;
+
+        background-size: cover;
+      }
+      td > div {
+        width: 100%;
+        height: 1.5em;
+      }
+    </style>
   </head>
   <body>
-    <table border="1" width="600">
+    <table>
       <tr>
-        <td rowspan="3"><img src="../image/sample.jpg" width="100" height="150" /></td>
+        <td rowspan="3"><div id="image_place"></div></td>
         <td colspan="4"><h2>이력서</h2></td>
       </tr>
       <tr>
         <td rowspan="2">성명</td>
-        <td rowspan="2" colspan="2">&nbsp;</td>
+        <td rowspan="2" colspan="2"><div>정현우</div></td>
         <td>생년월일</td>
       </tr>
       <tr>
-        <td></td>
+        <td><div>알아서 뭐해</div></td>
       </tr>
       <tr>
         <td>이메일</td>
-        <td colspan="4">&nbsp;</td>
+        <td colspan="4">@gmail.com</td>
       </tr>
       <tr>
         <td>현주소</td>
-        <td colspan="4">&nbsp;</td>
+        <td colspan="4">한국</td>
       </tr>
       <tr>
         <td>연락처</td>
-        <td colspan="4">&nbsp;</td>
+        <td colspan="4">010-1234-5678</td>
       </tr>
       <tr>
         <td>기간</td>
         <td colspan="2">학력사항</td>
         <td colspan="2">비고</td>
+      </tr>
+      <tr>
+        <td>오늘부터</td>
+        <td colspan="2">군대졸</td>
+        <td colspan="2">없음</td>
       </tr>
     </table>
   </body>

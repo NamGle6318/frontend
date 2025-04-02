@@ -33,3 +33,58 @@ h웹(앱) 개발 : 프론트(html, css, JS, reactm vue, ...) / 백엔드(node.js
           - [속성명 ^= 값] : 값으로 시작하는
           - [속성명 $= 값] : 값으로 끝나는
           - [속성명 *= 값] : 값이 포함된 
+        -- 가상(Pseduo) 클래스 선택자
+          -- a tag
+            - .state
+              : link
+              : active
+              : visited
+            - .다른요소
+              : hover => 특정 요소에 마우스가 올라간 상황
+              : focus => 특정 요소에 초점이 맞춰진 상황
+          - ui 변화
+            : disabled 
+            : checked => radio, checkbox
+          
+        -- 가상 요소 선택자
+          :: before
+          :: after
+
+        -- 구조 선택자
+          : first-child
+          : last-child
+          : nth-child(3)
+            : nth-child(n) (n) => 0부터 시작
+
+        -- 형태구조 선택자 : 태그명 사용
+          : first-of-type
+          : last-of-type
+          : nth-last-of-type(n)
+          : nth-of-type()
+        
+        -- 부정 선택자
+          : E:not(S) => S가 아닌 E 선택
+          
+        -- 디자인을 반영할 요소 선택
+          - color
+            a. 색상명 : red, blue, ...
+            b. 16진수 : #13ffee, #12ffae, ...
+            c. RGB : rgb(255,255,255), rgb(0,0,0), rgb(1,2,3), ...
+                    + rgba(0,255,0,0.5) (투명도)
+
+        -- 단위 
+          1. px : 고정(브라우저 크기를 줄이면 줄인 방향으로 스크롤 생김)
+          2. % : 상대(부모가 만들어준 공간에서의 비율)
+          3. em : em 단위가 쓰여진 곳의 폰트 사이즈 배수
+          4. rem : 루트 요소의 크기를 기준으로 함
+          5. vw : view_port_with : 화면 기준
+          6. vh : view_port_height
+        
+        -- 상속 : 글자와 관련된 속성들이 주로 상속을 가짐
+        -- 우선순위 : 
+          (important > 인라인선언 > 아이디(100) > 클래스(10) > 태그 > 전체선택자 > 상속)
+          1. 명시도 점수가 높은 선언이 우선
+          2. 점수가 같은 경우 가장 마지막에 해석되는 선언이 우선
+          3. 명시도는 상속 규칙보다 우선
+          4. important 가 적용된 선언 방식이 최우선
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p {
+        background: gray;
+        font-size: 2em;
+        height: 100px;
+        /* padding: top, right, bottom, left , 값하나만 입력시 사방향 전부 동일 적용*/
+        /* padding: 5px, 3px => top=5px, right=3px, bottom= top, left= right */
+        /* padding: 5px, 3px, 1px => top=5px, right=3px, bottom=1px, left=right */
+        padding: 10px;
+      }
+
+      span {
+        background: gray;
+        /* width: 100px;
+        height: 100px; */
+        /* line-height: 25px; */
+        padding-bottom: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- block(p, div) : 한행 다 사용, height가 0일때 => 내용만큼만 사용, 지정가능
+      / inline(a, span): 내용만큼만 사용, width, height가 적용이 되지 않음-->
+    <p>block level</p>
+    <p>block level</p>
+    <p>block level</p>
+    <p>block level</p>
+    <p>block level</p>
+
+    <span>inline level</span>
+    <span>inline level</span>
+    <span>inline level</span>
+    <span>inline level</span>
+    <span>inline level</span>
+
+    <div>
+      <a href="">1</a>
+      <a href="">2</a>
+      <a href="">3</a>
+      <a href="">4</a>
+      <a href="">5</a>
+    </div>
+  </body>
+</html>
