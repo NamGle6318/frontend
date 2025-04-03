@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .food-slide {
+        border: 1px solid green;
+        width: 800px;
+        height: 300px;
+        margin: 0 auto;
+        padding: 10px;
+        position: relative;
+      }
+
+      .jmt {
+        width: 400px;
+        height: 300px;
+        float: left;
+      }
+
+      .controls a {
+        line-height: 50px;
+        text-align: center;
+        background: #333;
+        display: block;
+        color: #fff;
+        position: absolute;
+        top: calc(50% - 25px);
+        white-space: nowrap; /* 공백을 기준으로 엔터처리하지 말 것 */
+      }
+
+      .prev {
+        right: 100%;
+      }
+
+      .next {
+        left: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="food-slide">
+      <img src="./htmlsource/image/images/food.jpg" alt="" class="jmt" />
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, iure debitis porro molestiae minus tempora
+        doloribus eius praesentium illum ratione voluptatem omnis saepe quia asperiores eligendi cupiditate temporibus
+        tenetur magnam?
+      </p>
+
+      <div class="controls">
+        <a href="" class="prev">Previous Project</a>
+        <a href="" class="next">Next Project</a>
+      </div>
+    </div>
+  </body>
+</html>

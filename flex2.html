@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: flex;
+        /* flex-direction: row; row(default), col, col-reverse, row-reverse */
+        flex-wrap: wrap; /* nowrap(default) */
+        /* justify-content: space-between; */
+        height: 400px;
+        border: 1px solid black;
+        align-content: space-between;
+      }
+      .container div {
+        /* background-color: silver; */
+        width: 200px;
+
+        height: 100px;
+
+        /* float: left; */
+      }
+      .container .item:nth-child(1) {
+        background-color: red;
+      }
+      .container .item:nth-child(2) {
+        background-color: orange;
+      }
+      .container .item:nth-child(3) {
+        background-color: yellow;
+      }
+      .container .item:nth-child(4) {
+        background-color: green;
+      }
+      .container .item:nth-child(5) {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        flex (display)
+            - 수평 배치 : (Before) float, inline-block 사용
+                                float : 해제 코드 필요(both)
+                                inline-block : width, height등 부여 불가능한 속성이 꽤 있음 + 자동처리 공백
+                          (After) flex : 기존 것들의 개선
+
+            flex
+            1. 컨테이너(상하, 좌우 배치되어야 할 아이템을 가지고 있는 부모 요소)
+                - display, flex-direction, flex-wrap
+                  flex-wrap :
+                    - wrap : 부모크기가 줄어들면 자식크기는 유지하고 엔터를 해 줄바꿈
+                    - nowra : 부모크기가 줄어들면 자식도 같이 줄어든가
+                - justify-content : 열 너비 정렬
+                  1. :flex-start : 왼쪽 정렬
+                  2. :flex-end : 오른쪽 정렬
+                  3. :flex-center : 가운데 정렬
+                  4. :space-around : 벌어지는 간격이 일정, (중첩되는 영역 다른영역보다 커짐)
+                  5. :space-evenly : 모든요소의 간격 같게
+                  6. :space-between : 첫 요소와 마지막 요소는 양쪽 끝으로 붙힘. 사이사이 간격 일정
+                - align-content : 행 너비 정렬(flex-wrap : wrap 상태에서 교차 축의 정렬 방법)
+                  - justify-content에서 flex-center 빼고 다있다.
+                
+                - 주축 : display:row = x축 / display:column = y축 (일단 가로)
+                
+                - 교차축 : display:row = y축 / display:column = x축 (일단 세로)
+                  
+            2. 아이템
+    -->
+    <div class="container">
+      <div class="item">flex-item1</div>
+      <div class="item">flex-item2</div>
+      <div class="item">flex-item3</div>
+      <div class="item">flex-item4</div>
+      <div class="item">flex-item5</div>
+    </div>
+  </body>
+</html>

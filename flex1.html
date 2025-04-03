@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: flex;
+        flex-direction: row; /* row(default), col, col-reverse, row-reverse */
+      }
+      .container div {
+        background-color: silver;
+        width: 33.3%;
+        height: 200px;
+        margin: 0 2px;
+        /* float: left; */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        flex (display)
+            - 수평 배치 : (Before) float, inline-block 사용
+                                float : 해제 코드 필요(both)
+                                inline-block : width, height등 부여 불가능한 속성이 꽤 있음 + 자동처리 공백
+                          (After) flex : 기존 것들의 개선
+
+            flex
+            1. 컨테이너(상하, 좌우 배치되어야 할 아이템을 가지고 있는 부모 요소)
+                - display
+            2. 아이템
+    -->
+    <div class="container">
+      <div>flex-item1</div>
+      <div>flex-item2</div>
+      <div>flex-item3</div>
+    </div>
+  </body>
+</html>

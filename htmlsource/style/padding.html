@@ -13,6 +13,8 @@
         /* padding: 5px, 3px => top=5px, right=3px, bottom= top, left= right */
         /* padding: 5px, 3px, 1px => top=5px, right=3px, bottom=1px, left=right */
         padding: 10px;
+        /* display: none; 그냥 없어짐 */
+        /* visibility: hidden; 글씨가 사라지고 자리는 확보되있음 */
       }
 
       span {
@@ -20,13 +22,32 @@
         /* width: 100px;
         height: 100px; */
         /* line-height: 25px; */
-        padding-bottom: 16px;
+        padding: 10px;
+        display: inline-block;
+      }
+      div {
+        margin: 20px; /* 바깥쪽 여백 */
+        text-align: left;
+        line-height: 40px;
+      }
+
+      div a {
+        width: 40px;
+        height: 40px;
+        background-color: blue;
+        color: white;
+        /* display으로 속성 변경 가능 (block, inline, inline-block, none ...) */
+
+        display: inline-block;
+        text-decoration: none;
+        text-align: center;
       }
     </style>
   </head>
   <body>
     <!-- block(p, div) : 한행 다 사용, height가 0일때 => 내용만큼만 사용, 지정가능
-      / inline(a, span): 내용만큼만 사용, width, height가 적용이 되지 않음-->
+      / inline(a, span): 내용만큼만 사용, width, height가 적용이 되지 않음
+        또한 상,하 padding을 가질 수 없음-->
     <p>block level</p>
     <p>block level</p>
     <p>block level</p>
@@ -45,6 +66,16 @@
       <a href="">3</a>
       <a href="">4</a>
       <a href="">5</a>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, unde! Autem dolor repudiandae nemo eos ut?
+      Molestiae culpa veniam nobis, exercitationem saepe fuga modi iusto excepturi quibusdam atque, quia maiores?
+    </p>
+
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quod facilis, suscipit minus enim sed
+      aliquam nisi. Perspiciatis repellat aspernatur asperiores nulla ipsa doloremque tenetur magnam ad minus placeat.
+      Id.
     </div>
   </body>
 </html>
