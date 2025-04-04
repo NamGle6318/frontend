@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 전체 여백 0 */
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      /* body 배경색 : #ecf0f1 */
+      body {
+        background-color: #ecf0f1;
+      }
+
+      /* wrapper : max-width: 60rem, width:100% */
+      .wrapper {
+        max-width: 60rem;
+        width: 100%;
+        margin: 2rem auto;
+      }
+
+      /* flexbg : flex 컨테이너 */
+      .flexbg {
+        display: flex;
+      }
+      /* main : 배경색 흰색, 안쪽여백 25px, order 2 */
+      .flexbg main {
+        background-color: white;
+        padding: 25px;
+        order: 2;
+      }
+
+      .flexbg .sidebar {
+        padding: 25px;
+        width: 20%;
+      }
+      /* left : 배경색 #3498db, order 1 */
+      .flexbg .left {
+        background-color: #3498db;
+        order: 1;
+      }
+
+      /* right : 배경색 #34495e, order 3 */
+      .flexbg .right {
+        background-color: #34495e;
+        order: 3;
+      }
+
+      /* tablet */
+      @media screen and (max-width: 768px) {
+        .flexbg {
+          display: flex;
+          flex-wrap: wrap;
+        }
+        .flexbg main {
+          width: 100%;
+          order: 1;
+        }
+        .flexbg .sidebar {
+          width: 50%;
+        }
+        .flexbg .left {
+          order: 2;
+        }
+        .flexbg .right {
+          order: 3;
+        }
+      }
+
+      /* mobile */
+      @media screen and (max-width: 480px) {
+        .flexbg {
+          display: flex;
+          flex-wrap: wrap;
+        }
+        .flexbg main {
+          width: 100%;
+          order: 1;
+        }
+        .flexbg .sidebar {
+          width: 100%;
+        }
+        .flexbg .left {
+          order: 2;
+        }
+        .flexbg .right {
+          order: 3;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper flexbg">
+      <main>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam reprehenderit ab numquam excepturi quaerat
+          quam sed, quos hic nesciunt, corporis, iste aliquam aut sequi ullam modi. Magnam laboriosam enim sequi
+          molestiae laudantium perspiciatis non quos reprehenderit accusamus modi quidem quasi atque corrupti,
+          consequatur qui consectetur et repellat sint quisquam odio possimus incidunt vitae excepturi? Fugit laborum ut
+          asperiores nisi repudiandae eos iusto labore assumenda ea? Porro corporis animi possimus quis aliquid ipsa
+          commodi repudiandae minima velit sint, maiores atque hic, veritatis voluptates. Incidunt sit animi, esse eum
+          laboriosam molestias distinctio. Ullam itaque quis sapiente! Consequuntur voluptates eveniet aliquam quibusdam
+          incidunt!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam reprehenderit ab numquam excepturi quaerat
+          quam sed, quos hic nesciunt, corporis, iste aliquam aut sequi ullam modi. Magnam laboriosam enim sequi
+          molestiae laudantium perspiciatis non quos reprehenderit accusamus modi quidem quasi atque corrupti,
+          consequatur qui consectetur et repellat sint quisquam odio possimus incidunt vitae excepturi? Fugit laborum ut
+          asperiores nisi repudiandae eos iusto labore assumenda ea? Porro corporis animi possimus quis aliquid ipsa
+          commodi repudiandae minima velit sint, maiores atque hic, veritatis voluptates. Incidunt sit animi, esse eum
+          laboriosam molestias distinctio. Ullam itaque quis sapiente! Consequuntur voluptates eveniet aliquam quibusdam
+          incidunt!
+        </p>
+      </main>
+      <aside class="sidebar left">
+        <p>You might have some latest posts here on the left</p>
+      </aside>
+      <aside class="sidebar right">
+        <p>And some other widgets here on the right</p>
+      </aside>
+    </div>
+  </body>
+</html>

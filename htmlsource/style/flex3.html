@@ -65,14 +65,14 @@
                   flex-wrap :
                     - wrap : 부모크기가 줄어들면 자식크기는 유지하고 엔터를 해 줄바꿈
                     - nowra : 부모크기가 줄어들면 자식도 같이 줄어든가
-                - justify-content : 열 너비 정렬
+                - justify-content : 열 너비 정렬(주축 정렬)
                   1. :flex-start : 왼쪽 정렬
                   2. :flex-end : 오른쪽 정렬
                   3. :flex-center : 가운데 정렬
                   4. :space-around : 벌어지는 간격이 일정, (중첩되는 영역 다른영역보다 커짐)
                   5. :space-evenly : 모든요소의 간격 같게
                   6. :space-between : 첫 요소와 마지막 요소는 양쪽 끝으로 붙힘. 사이사이 간격 일정
-                - align-content : 행 너비 정렬(flex-wrap : wrap 상태에서 교차 축의 정렬 방법)
+                - align-content : 행 너비 정렬(교차 축 정렬)(flex-wrap : wrap 상태에서 교차 축의 정렬 방법) 
                   - justify-content에서 flex-center 빼고 다있다.
                 
                 - 주축 : display:row = x축 / display:column = y축 (일단 가로)
@@ -84,7 +84,7 @@
               - flex-grow : 자식요소들의 컨텐츠를 제외한 영역(공백)들의 공간이 1로 같아짐
               - flex-basis : 컨텐츠를 포함한 영역들의 공간이 서로 같아짐
               - flex-shrink : 동일한데 감소비율을 지정
-              - 축약형 flex : 1 1 auto;
+              - 축약형 flex : 1 1 auto; 증가 감소 기본
     -->
     <div class="container">
       <div class="item">H</div>

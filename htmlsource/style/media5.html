@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 전체 여백 0 */
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      /* body 배경색 #333338, 글자색 #444 */
+      body {
+        background-color: #333338;
+        color: #444;
+      }
+
+      .container {
+        display: flex;
+      }
+
+      /* main과 sub 의 공간을 이치시키는 방법 */
+      /* 1. sub 공간을 flex로 만들어 여백을 나누어 가짐 */
+      /* 2. 기존 flex의 공백을 동일하게 나누어 가지는 특성을 활용 */
+      /* .container .panel {
+        height: 100%;
+      } */
+      /*  sidebar : 바깥여백 10, 안쪽여백 6, 배경색 #eee, */
+      .sidebar {
+        margin: 10px;
+        padding: 6px;
+        background-color: #eee;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /*  ???  */
+      }
+
+      /*  panel : 바깥여백 10, 안쪽여백 20, 배경색 #fff, */
+      .panel {
+        margin: 10px;
+        padding: 20px;
+        background-color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section class="main-content">
+        <div class="panel">
+          <h1>Main Title</h1>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias tempora qui illum eveniet mollitia soluta,
+            magni distinctio saepe vero animi dignissimos eius unde porro, cumque voluptate ea cum quibusdam. Porro.
+          </p>
+          <img src="./htmlsource/image/images/bg.png" alt="" />
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium quidem delectus mollitia ipsa
+            explicabo. Rem minus culpa quaerat et quam eligendi voluptate dolor cupiditate, dolore ea quas fuga dolores
+            deleniti beatae nihil modi tempora omnis aliquid natus! Harum commodi veniam quo tempora! Repudiandae nobis
+            amet necessitatibus architecto, alias labore sapiente!
+          </p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste itaque atque accusamus repudiandae, ea nulla
+            voluptatem fugit esse dolorum temporibus aliquid voluptatibus incidunt perferendis illo nisi. Odit similique
+            quia animi.
+          </p>
+          <h3>Sub Title</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem nesciunt sit provident minus reprehenderit
+            magnam vel nostrum ratione corrupti voluptatibus atque, autem porro. Voluptas dolores vitae iusto a.
+            Similique, iste tempore cupiditate aspernatur sed debitis deleniti ea odit consequuntur quidem omnis esse
+            quaerat nostrum, quam nam consequatur ut molestiae officiis.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem nesciunt sit provident minus reprehenderit
+            magnam vel nostrum ratione corrupti voluptatibus atque, autem porro. Voluptas dolores vitae iusto a.
+            Similique, iste tempore cupiditate aspernatur sed debitis deleniti ea odit consequuntur quidem omnis esse
+            quaerat nostrum, quam nam consequatur ut molestiae officiis.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem nesciunt sit provident minus reprehenderit
+            magnam vel nostrum ratione corrupti voluptatibus atque, autem porro. Voluptas dolores vitae iusto a.
+            Similique, iste tempore cupiditate aspernatur sed debitis deleniti ea odit consequuntur quidem omnis esse
+            quaerat nostrum, quam nam consequatur ut molestiae officiis.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem nesciunt sit provident minus reprehenderit
+            magnam vel nostrum ratione corrupti voluptatibus atque, autem porro. Voluptas dolores vitae iusto a.
+            Similique, iste tempore cupiditate aspernatur sed debitis deleniti ea odit consequuntur quidem omnis esse
+            quaerat nostrum, quam nam consequatur ut molestiae officiis.
+          </p>
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <div class="panel">
+          <h3>Item 1</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nisi, animi laboriosam molestiae modi</p>
+        </div>
+        <div class="panel">
+          <h3>Item 2</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nisi, animi laboriosam molestiae modi aliquam
+            expedita magni illo odit obcaecati voluptates quos numquam ratione, maiores amet assumenda consectetur?
+            Similique, impedit?
+          </p>
+        </div>
+        <div class="panel">
+          <h3>Item 3</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nisi, animi laboriosam molestiae modi aliquam
+            expedita magni illo odit obcaecati voluptates quos numquam ratione, maiores amet assumenda consectetur?
+            Similique, impedit?
+          </p>
+        </div>
+        <div class="panel">
+          <h3>Item 4</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nisi, animi laboriosam molestiae modi aliquam
+            expedita magni illo odit obcaecati voluptates quos numquam ratione, maiores amet assumenda consectetur?
+            Similique, impedit?
+          </p>
+        </div>
+      </aside>
+    </div>
+  </body>
+</html>
