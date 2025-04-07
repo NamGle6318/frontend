@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 국어, 영어, 수학 점수를 입력받은 후 평균점수에 맞는 학점 출력
+      // 90 이상 A, 80 이상 B, 70 이상 C, 60 이상 D, 나머지 F
+      let koreanScore = parseInt(prompt("국어 점수를 입력하세요."));
+
+      let englishScore = parseInt(prompt("영어 점수를 입력하세요."));
+      let mathScore = parseInt(prompt("수학 점수를 입력하세요."));
+      console.log(typeof koreanScore, typeof englishScore, typeof mathScore);
+      const score = Number(koreanScore + englishScore + mathScore) / 3;
+      console.log(score);
+      //   if (score >= 90) {
+      //     document.write("A");
+      //   } else if (score >= 80) {
+      //     document.write("B");
+      //   } else if (score >= 80) {
+      //     document.write("C");
+      //   } else if (score >= 80) {
+      //     document.write("D");
+      //   } else {
+      //     document.write("F");
+      //   }
+
+      switch (parseInt(score / 10)) {
+        case 10:
+        case 9:
+          document.write("A");
+          break;
+        case 8:
+          document.write("B");
+          break;
+        case 7:
+          document.write("C");
+          break;
+        case 6:
+          document.write("D");
+          break;
+
+        default:
+          document.write("F");
+          break;
+      }
+      console.log(parseInt(score / 10));
+    </script>
+  </body>
+</html>

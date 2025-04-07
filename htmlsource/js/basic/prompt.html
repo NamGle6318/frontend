@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 상호작용 함수 - alert()
+      // alert("사용자에게 메시지 전달");
+
+      // 사용자로부터 입력받기 -- prompt()
+      const age = prompt("나이를 입력 해주세요.", 25); // 입력 안할 시 null
+      if (age != null) {
+        console.log(typeof age); // string
+        alert("너의 나이 " + age);
+      } else {
+        alert("입력 왜 안하냐");
+      }
+
+      const result = confirm("당신이 주인입니까?"); // 확인 = true / 취소 = false
+      console.log(result);
+
+      if (result) {
+        alert("명령 복종");
+      } else {
+        alert("명령 불 복종");
+      }
+
+      // NaN(Not a Number)
+      console.log("\n");
+      console.log(isNaN("12")); // false = 숫자다
+      console.log(isNaN("abc")); // ture = 숫자가 아니다
+
+      // "12" => 12
+      // 1. Number()
+      const num1 = "12";
+      console.log(typeof Number(num1)); // number
+
+      // 2. parseInt()
+      console.log(typeof parseInt(num1)); // number
+
+      // 문자를 number 타입으로 형변환을 시도할시 반환되는 type
+      const str1 = "abc";
+      console.log(Number(str1)); // NaN
+      console.log(parseInt(str1)); // NaN
+      console.log(typeof Number(str1)); // Number
+
+      if (isNaN(Number(str1))) {
+        alert("숫자가 아니야");
+      }
+    </script>
+  </body>
+</html>
