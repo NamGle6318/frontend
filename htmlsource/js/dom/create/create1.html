@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Header</h1>
+    <script>
+      const info = function () {
+        let output = "";
+
+        output += "<ul>";
+        output += "<li> List1 </li>";
+        output += "<li> List2 </li>";
+        output += "<li> List3 </li>";
+        output += "</ul>";
+
+        // output을 body의 자식으로 생성
+        // document.body.innerHTML = output; = output 내용을 body에 대입함 => 기존 내용을 다 덮어씀
+        document.body.innerHTML += output; // 됨
+        // 결론 : body.innerHTML은 body의 내용 전체를 말한다.
+      };
+
+      info();
+
+      // body 태그를 동적으로 구성
+    </script>
+  </body>
+</html>

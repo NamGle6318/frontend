@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="header1"><i>Header 1</i></h1>
+    <h2 id="header2">Header 2</h2>
+    <form action="" method="get" class="form">
+      <div class="">
+        <input type="text" name="username" id="username" />
+        <button type="submit">확인</button>
+      </div>
+    </form>
+    <script>
+      // h1 요소 가져오기
+      //   let h1 = document.body.firstElementChild;
+      let h1 = document.getElementById("header1"); // id로 탐색
+      let h2 = document.getElementById("header2"); // id로 탐색
+      console.log(h1);
+      console.log(h2);
+
+      let username = document.getElementById("username");
+      console.log(username);
+
+      // h1 안의 텍스트 가져오기
+      console.log(h1.textContent);
+      //   h1.textContent = "Change H1"; // 텍스트 수정 가능 [태그는 적용 안됨]
+      console.log(h1);
+      // id 가져오기
+      console.log(h1.id);
+
+      // h1의 텍스트콘텐트 + 속성까지 가져오기
+      console.log(h1.innerHTML);
+      h1.innerHTML = "<i>Change H1</i>"; // innerHTML : 텍스트에 HTML 태그 적용 가능
+
+      // id가 없는 요소를 가져오기 (class, name, tag .)
+      //   document.getElementsByClassName();
+      //   document.getElementsByName
+      //   document.getElementsByTagNameNS
+      let btn = document.getElementsByTagName("button");
+      console.log(btn); // collection 으로 뭔가가 많이 딸려옴
+      console.log(btn[0]); // 원하는건 0번에 있음
+
+      // css 선택자 모두 사용가능
+      // querySelector(), querySelectorAll()
+      h1 = document.querySelector("#header1");
+      h2 = document.querySelector("#header2");
+      btn = document.querySelector("button");
+      let form = document.querySelector(".form");
+    </script>
+  </body>
+</html>

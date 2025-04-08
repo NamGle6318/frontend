@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="header1" class="header">Header 1</h1>
+    <h2 id="header2" class="header" name="Header2">Header 2</h2>
+    <img src="../../../image/images/bg.png" alt="집갈래" />
+    <div>
+      <a href="./remove2.html">remove2</a>
+    </div>
+    <script>
+      // 특정 속성 제거
+
+      // h1 요소 가져운 후 속성 값 출력
+      const h1 = document.querySelector("h1");
+
+      // id 값 불러오기
+      const h1Id = h1.id;
+      console.log(h1Id);
+
+      // class 값 불러오기
+      console.log(h1.getAttribute("class"));
+      //   const h1CName = h1.classList;
+
+      // 이미지 태그의 속성 값 불러오기
+      const img = document.querySelector("img");
+      console.log("src", img.src); // http://192.168.55.79:5500/htmlsource/image/images/bg.png : 절대경로
+      console.log("src att", img.getAttribute("src")); // ../../../image/images/bg.png : 상대경로
+      console.log("alt", img.alt); // 집갈래
+
+      // a요소의 url 가져오기
+      const a = document.querySelector("a");
+      console.log("href", a.href); // 절대경로
+      console.log("href att", a.getAttribute("href")); // 상대경로
+      console.log(a);
+      // 결론 : 절대경로, 상대경로 필요에따라 사용하자
+
+      // h1의 class 속성 제거
+      h1.removeAttribute("class");
+
+      // h2 찾은 후 name 속성 제거
+      const h2 = document.querySelector("h2");
+      h2.removeAttribute("name");
+
+      // 값만 제거
+      //   img.src = "";
+      img.setAttribute("src", ""); // 택1
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      alert("head " + document.body); // null : 절차상 body가 생성 전
+    </script>
+  </head>
+  <body>
+    <p>Hello, World!</p>
+    <script>
+      alert("body " + document.body);
+    </script>
+  </body>
+</html>
+<!-- 
+  브라우저는 HTML, CSS를 파싱(쪼개서 분석).
+  파싱 후
+  HTML => DOM 트리
+    DOM 트리 : WINDOW - DOCUMENT - HTML - HEAD
+                                        - BODY - P
+  CSS => CSSOM 트리
+  
+  자바 스크립트에서 DOM트리에 접근 가능
+  접근 방법 
+  1) : 프로퍼티 이용 : childNodes, children
+  
+-->

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="post">
+      <div class="">
+        <label for="name"
+          >이름
+          <input type="text" name="name" id="name" value="" />
+        </label>
+      </div>
+      <div class=""><button type="submit" value="">보내기</button></div>
+    </form>
+
+    <script>
+      // 폼에 submit 이벤트 발생 시
+      const form = document.querySelector("[method=post]");
+      form.addEventListener("submit", (e) => {
+        // e : 이벤트가 일어난 대상 가져오기, 이벤트 발생 대상의 부모 요소 가져오기 가능
+        //     event 중지 가능
+
+        // e.target : 이벤트가 일어난 대상을 가져오기
+
+        // 1. submit 이벤트 중지 : e.preventDefault();
+        e.preventDefault();
+        console.log("e.target : ", e.target);
+        // 2. name에 입력한 값을 가져옴
+        const name = e.target.querySelector("#name");
+
+        // 3. 가져온 값의 글자 수가 2자리 이상인지를 판별
+        if (name.value.length < 2) {
+          // 만약 2자리 수 이하일 경우 경고 메시지 출력
+          alert("이름이 좀 이상한데요?");
+          //   name.focus(); // 마우스 커서가 감
+          name.select(); // focus + 내용을 블럭지정
+        }
+        return this;
+        // const name = document.querySelector("label");
+      });
+    </script>
+  </body>
+</html>

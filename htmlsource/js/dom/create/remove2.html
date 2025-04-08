@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="top">
+      <div id="nested">내용</div>
+    </div>
+    <button type="button">버튼</button>
+    <script>
+      const parent = document.querySelector("#top");
+      const nested = document.querySelector("#nested");
+      const btn = document.querySelector("button").addEventListener("click", () => parent.removeChild(nested));
+
+      //   btn.addEventListener("click", () => {
+      //     nested.remove();
+      //   });
+
+      // removechild(); 자식 삭제
+    </script>
+  </body>
+</html>
