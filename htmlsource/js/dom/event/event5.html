@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <button type="button" value="on">Turn on the light</button>
+      <img src="./pic_bulboff.gif" alt="" srcset="" />
+      <button type="button" value="off">Turn off the light</button>
+    </div>
+
+    <script>
+      // Turn off the light 버튼 클릭시 img src 변경
+      // Turn on the light 버튼 클릭시 img src 변경
+
+      function lightSwitch(e) {
+        // img 소스 불러오고 value값에 따라 어떤 소스로 바꿀지 정하기
+        let img = document.querySelector("img");
+        img.setAttribute("src", e.includes("on") ? "./pic_bulbon.gif" : "./pic_bulboff.gif");
+      }
+
+      const btns = document.querySelector("div");
+      btns.addEventListener("click", (e) => lightSwitch(e.target.textContent));
+    </script>
+  </body>
+</html>

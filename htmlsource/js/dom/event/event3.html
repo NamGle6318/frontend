@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* #target {
+        background-color: lightblue;
+      } */
+    </style>
+  </head>
+  <body id="target">
+    <div>
+      <input type="radio" name="color" id="" value="lightblue" /> 파랑
+      <input type="radio" name="color" id="" value="green" /> 녹색
+    </div>
+    <script>
+      // 파랑 텍스트의 radio가 클릭되면 body 배경색 -> 파랑
+      // 녹색 텍스트의 radio가 클릭되면 body 배경색 -> 녹색
+
+      // 1. 클릭됨
+      // 2. 텍스트 구분
+      // 3. 색 변경
+      function changeColor(color) {
+        if (color != null) {
+          document.body.style.backgroundColor = color;
+        }
+      }
+
+      //   const radios = document.querySelectorAll("[type=radio]");
+      //   radios[0].addEventListener("click", (e) => changeColor(e.target.getAttribute("value")));
+      //   radios[1].addEventListener("click", (e) => changeColor(e.target.getAttribute("value")));
+
+      // 이벤트버블링을 이용해보자!
+      const radios = document.querySelector("div");
+      radios.addEventListener("click", (e) => changeColor(e.target.getAttribute("value")));
+
+      // div 내 함수 실행시 판별식을 넣어두면 될거같음
+    </script>
+  </body>
+</html>

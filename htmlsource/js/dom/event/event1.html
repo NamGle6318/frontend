@@ -7,6 +7,11 @@
   </head>
   <body>
     <h1 onclick="alert('경고')">Header</h1>
+    <h2>Header2</h2>
+    <div><a href="http://www.naver.com" target="_blank">naver!</a></div>
+    <button type="button">클릭1</button>
+    <button type="button">클릭2</button>
+
     <script>
       // event : 사이트에서 방문자가 취하는 모든 행위
       // ex) 마우스 드래그, 클릭, 더블클릭, 입력, ...
@@ -15,6 +20,31 @@
       // 1. 이벤트 핸들러 속성 이용 : 해당 태그 내에 직접 입력
       // 2. 이벤트리스너 속성 이용 :
       //      -- 이벤트 대상 찾기, 이벤트명 지정, 함수 연결
+
+      const btns = document.querySelectorAll("button");
+      console.log(btns[0]);
+      console.log(btns[1]);
+
+      // 클릭1버튼 : 클릭시 안녕하세요 출력
+      // 클릭2버튼 : 클릭시 안녕하세요 홍길동님 출력
+      btns[0].addEventListener("click", () => alert("안녕하세요"));
+      btns[1].addEventListener("click", () => alert("안녕하세요 홍길동"));
+
+      // h2에 클릭 이벤트를 넣기(클릭시 글자 내용을 'Good Job'으로 변경)
+      // const h2 = document.querySelector("h2");
+      // h2.addEventListener("click", () => (h2.textContent = "Good Job"));
+      document.querySelector("h2").addEventListener("click", (e) => (e.target.textContent = "Good Job"));
+      // -> e : 이벤트
+      //    e.target : 이벤트가 발생한 애
+
+      // a 태그가 클릭이 되면 해당 텍스트인(naver!)를 콘솔에 출력하기
+      // document.querySelector("a").addEventListener("click", (e) => console.log(e.target.textContent));
+
+      const tag = document.querySelector("a");
+      tag.addEventListener("click", (e) => {
+        e.preventDefault(); // 이벤트 중지
+        console.log(e.target.textContent);
+      });
     </script>
   </body>
 </html>

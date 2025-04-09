@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* #target {
+        background-color: lightblue;
+      } */
+    </style>
+  </head>
+  <body id="target">
+    <div>
+      <input type="radio" name="gender" id="" value="man" /> 남자
+      <input type="radio" name="gender" id="" value="woman" /> 여자
+    </div>
+    <script>
+      // 사용자가 선택한 radio의 value를 console에 출력
+      const gender = document.querySelector("div");
+      function getGender(gender) {
+        if (gender != null) {
+          console.log(gender);
+        }
+      }
+      // gender[0].addEventListener("click", (e) => getGender(e.target.getAttribute("value")));
+      // gender[1].addEventListener("click", (e) => getGender(e.target.getAttribute("value")));
+
+      gender.addEventListener("click", (e) => getGender(e.target.getAttribute("value")));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <form action="" method="post">
+        <div class="mb-3">
+          <label for="text" class="form-label">Email address</label>
+          <input type="text" class="form-control" id="text" name="text" aria-describedby="emailHelp" />
+          <div id="text" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <button type="submit" class="btn btn-success">제출</button>
+        <div id="result"></div>
+      </form>
+    </div>
+
+    <script>
+      // submit 이벤트 : form 요소에서 발생
+
+      const form = document.querySelector("form").addEventListener("submit", (e) => {
+        // input text 내 내용이 비어있는지 확인
+        e.preventDefault();
+        const form = e.target;
+        const text = form.text;
+
+        if (text.value === "") {
+          alert("잘못 입력하신거 같은데요?");
+          text.focus();
+          return;
+        }
+        const result = form.querySelector("#result");
+        result.textContent = text.value;
+        // const input = form.querySelector(".form-control");
+
+        // 사용자가 입력한 내용을 result 영역 안에 보여주기
+      });
+    </script>
+  </body>
+</html>

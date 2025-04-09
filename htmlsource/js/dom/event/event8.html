@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #p1 {
+        /* display : none */
+        /* visibility: hidden */
+        /* visibility: visible; */
+      }
+    </style>
+  </head>
+  <body>
+    <p id="p1">This is a paragraph</p>
+    <button type="button">숨기기</button>
+    <button type="button">보이기</button>
+
+    <script>
+      // button 클릭 시 p1의 스타일 변경하기
+      // 글자색상, 글자크기, 글꼴 => 임의
+
+      let p = document.querySelector("#p1");
+
+      // const btn1 = document.querySelector("button:nth-of-type(1)");
+      // const btn2 = document.querySelector("button:nth-of-type(2)");
+
+      const btns = document.querySelectorAll("button");
+
+      function visibility(mode) {
+        p.style.visibility = mode;
+      }
+
+      btns[0].addEventListener("click", () => visibility("hidden"));
+      btns[1].addEventListener("click", () => visibility("visible"));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>사칙연산 계산기</h3>
+
+    <form action="" method="post">
+      <input type="text" name="num1" id="num1" size="5" />
+      <select name="op" id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+      </select>
+      <input type="text" name="num1" id="num2" size="5" />
+      =
+      <input type="text" name="num1" id="result" size="10" />
+      <button type="submit">결과</button>
+    </form>
+
+    <script>
+      // 덧셈결과 버튼 클릭 시
+      // num1과 num2의 value를 더한 값을 result text칸에 보여주기
+
+      const form = document.querySelector("form");
+      const num1 = form.querySelector("#num1");
+      const num2 = form.querySelector("#num2");
+      const op = form.querySelector("#op");
+      const result = form.querySelector("#result");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // 1. 입력한 값이 number인지 확인
+        // 2. 연산자가 무엇인지 확인
+        let check = isNaN(parseInt(num1.value)) || isNaN(parseInt(num2.value));
+        let sum = 0;
+
+        const value1 = parseInt(num1.value);
+        const value2 = parseInt(num2.value);
+
+        if (!check) {
+          result.value = sum;
+
+          switch (op.value) {
+            case "+":
+              sum = value1 + value2;
+              break;
+            case "-":
+              sum = value1 - value2;
+              break;
+            case "*":
+              sum = value1 * value2;
+              break;
+            case "/":
+              sum = value1 / value2;
+              break;
+            case "%":
+              sum = value1 % value2;
+              break;
+
+            default:
+              break;
+          }
+
+          result.value = sum;
+        } else {
+          result.value = "숫자를 넣어주세요";
+          return;
+        }
+      });
+    </script>
+  </body>
+</html>

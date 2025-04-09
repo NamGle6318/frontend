@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="./pic_bulboff.gif" alt="" srcset="" />
+
+    <script>
+      // img 클릭시 on/off
+      let img = document.querySelector("img");
+      let mode = false;
+      function lightSwitch(e) {
+        // 판별 조건은 img의 src로
+
+        img.setAttribute("src", e.includes("off") ? "./pic_bulbon.gif" : "./pic_bulboff.gif");
+      }
+
+      // img.addEventListener("click", (e) => lightSwitch(e.target.getAttribute("src")));
+      img.addEventListener("click", (e) => {
+        if (!mode) {
+          img.setAttribute("src", "./pic_bulbon.gif");
+        } else {
+          img.setAttribute("src", "./pic_bulboff.gif");
+        }
+        mode = !mode; // good
+      });
+    </script>
+  </body>
+</html>
