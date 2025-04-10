@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div * {
+        margin: 10px;
+      }
+
+      [readonly] {
+        background: lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>숫자 맞추기</h2>
+    <p>
+      컴퓨터가 생성한 숫자를 맞추는 게임 <br />
+      숫자는 1 ~ 100 사이에 있습니다.
+    </p>
+
+    <div>
+      <label for="">
+        숫자
+        <input type="text" name="num1" id="num1" size="5" />
+        <button type="button">확인</button>
+      </label>
+    </div>
+    <div>
+      <label for="">
+        추측횟수
+        <input type="text" name="count" id="count" size="5" readonly />
+      </label>
+    </div>
+    <div>
+      <label for="">
+        힌트
+        <input type="text" name="hint" id="hint" readonly />
+      </label>
+    </div>
+
+    <script>
+      // 컴퓨터가 임의의 숫자를 생성 ( 1 ~ 100)
+      // 유저가 num1 칸에 숫자를 기입하고 확인
+      // 추측횟수 1+
+      // 힌트 : 더 큰수 or 더 작은수
+      const btn = document.querySelector("button");
+      let userNumber = document.querySelector("#num1");
+      let counting = document.querySelector("#count");
+      let hint = document.querySelector("#hint");
+
+      let comNum = parseInt(Math.random() * 100) + 1;
+      let userNum = 0;
+      let count = 0;
+
+      console.log(comNum);
+
+      btn.addEventListener("click", (e) => {
+        // 1. 유저 숫자, 컴퓨터 숫자 값 비교
+        userNum = userNumber.value;
+        // 2. 추측횟수 카운트하기
+        counting.value = parseInt(++count);
+
+        // 3. 비교 결과에 따라 힌트 조건식에 따라 출력하기
+
+        if (!(parseInt(userNum) == comNum)) {
+          hint.value = userNum > comNum ? "더 작은 값을 입력하세요." : "더 큰 값을 입력하세요.";
+        } else {
+          hint.value = "정답입니다~";
+          btn.disabled = "true";
+        }
+        userNumber.focus();
+      });
+    </script>
+  </body>
+</html>

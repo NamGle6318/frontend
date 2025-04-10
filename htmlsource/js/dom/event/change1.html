@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="post">
+      <div class="">
+        <label>이름1 <input type="text" name="name" id="name" /></label>
+      </div>
+      <div class="">
+        <label>이름2 <input type="text" name="name2" id="name2" /></label>
+      </div>
+      <div>
+        <select name="fruit" id="fruit">
+          <option value="">과일 선택</option>
+          <option value="">사과</option>
+          <option value="">감</option>
+          <option value="">귤</option>
+          <option value="">감귤</option>
+        </select>
+      </div>
+    </form>
+    <p>입력 필드를 벗어나면 소문자로 변경</p>
+    <script>
+      // change, input
+      const name = document.querySelector("#name");
+      const name2 = document.querySelector("#name2");
+      // change : 해당 focus를 벗어나면 change 이벤트 발생, 단 값을 입력하지 않고 focus를 벗어나면 발생하지 않는다.
+      // input  : 입력시 input 이벤트 발생
+      // blur   : change와 동일하나, 값을 입력하지 않고 focus를 벗어나도 이벤트가 발생함
+
+      name.addEventListener("change", (e) => (e.target.value = e.target.value.toLowerCase()));
+
+      //   name2.addEventListener("input", (e) => (e.target.value = e.target.value.toLowerCase()));
+      name2.addEventListener("blur", (e) => (e.target.value = e.target.value.toLowerCase()));
+
+      document.querySelector("#fruit").addEventListener("change", (e) => {
+        console.log(e.target.value);
+      });
+    </script>
+  </body>
+</html>

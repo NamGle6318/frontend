@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .alert-box {
+        background: skyblue;
+        padding: 20px;
+        color: white;
+        border-radius: 5px;
+        margin: 10px;
+        position: relative;
+        display: none;
+      }
+
+      button {
+        border: 0;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: rgb(54, 62, 228);
+        color: white;
+        cursor: pointer;
+      }
+
+      /* 알림창 숨기기 */
+
+      /* 버튼 클릭시 알림창 보여주기 */
+      .show {
+        display: block;
+      }
+
+      /* X의 위치는 알림창 우측상단에 배치하기 */
+      .close {
+        position: absolute;
+        display: inline-block;
+        top: 0;
+        right: 1%;
+        border: 1px solid black;
+
+        padding: 0 5px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="alert-box">
+      <p>알림창</p>
+      <span class="close">X</span>
+    </div>
+    <button class="show">버튼 1</button>
+    <button class="show">버튼 2</button>
+
+    <script>
+      // 버튼 1 입력시 알림창에 "아이디를 입력해주세요"
+      // 버튼 2 입력시 알림창에 "비밀번호를 입력해주세요"
+      const box = document.querySelector(".alert-box");
+      const btn1 = document.querySelector(".show");
+      const btn2 = btn1.nextElementSibling;
+      console.log(box.firstChild);
+      btn1.addEventListener("click", (e) => {
+        // box.innerHTML = " ";
+        // box.innerHTML =
+        //   '<div class="alert-box' + " " + 'show">아이디를 입력해주세요.<span' + " " + 'class="close">X</span></div>';
+        box.firstChild.nodeValue = "아이디를 입력해주세요";
+        document.querySelector(".alert-box").classList.add("show");
+      });
+      btn2.addEventListener("click", (e) => {
+        // box.innerHTML = " ";
+        // box.innerHTML = '<div class="alert-box show">비밀번호를 입력해주세요.<span class="close">X</span></div>';
+        // box.firstChild.nodeValue = "비밀번호 입력해주세요";
+        document.querySelector(".alert-box").classList.add("show");
+      });
+      console.log(btn1);
+      console.log(btn2);
+      const xBtn = document.querySelector(".close");
+      xBtn.addEventListener("click", () => box.classList.remove("show"));
+    </script>
+  </body>
+</html>
