@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        display: flex;
+        background-color: lightblue;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container li {
+        list-style: none;
+        margin: 0 10px;
+        width: 25%;
+        cursor: pointer;
+      }
+
+      div {
+        padding: 20px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+
+      th,
+      td {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="container">
+      <li>메뉴1</li>
+      <li>메뉴2</li>
+      <li>메뉴3</li>
+      <li>메뉴4</li>
+    </ul>
+
+    <script>
+      // 메뉴 1번 : data.txt 출력
+
+      const menu1 = document.querySelector("ul > li:first-child");
+
+      menu1.addEventListener("click", () => {
+        fetch("httpS://NamGle6318.github.io/data/data.txt")
+          .then((res) => {
+            if (!res.ok) throw new Error("경로를 확인해 주세요");
+            return res.text();
+          })
+          .then((data) => {
+            // div 영역에 결과를 보여주기
+
+            document.querySelector("div").innerHTML = data;
+          });
+      });
+
+      // 메뉴 2번 : version.json 출력
+      const menu2 = document.querySelector("ul > li:nth-child(2)");
+
+      menu2.addEventListener("click", () => {
+        fetch("httpS://NamGle6318.github.io/data/version.json")
+          .then((res) => {
+            if (!res.ok) throw new Error("경로를 확인해 주세요");
+            return res.json();
+          })
+          .then((data) => {
+            // div 영역에 결과를 보여주기
+
+            // version : 1.5
+            //codename : cupcake
+            let result = `<ul>`;
+            result += `<li>version : ${data.version}</li>`;
+            result += `<li>codename : ${data.codename}</li>`;
+            result += `</ul>`;
+
+            document.querySelector("div").innerHTML = result;
+            // `version : ${data.version}<br> codename : ${data.codename}`;
+          });
+      });
+
+      // 메뉴 3번 : version2.json 출력
+      const menu3 = document.querySelector("ul > li:nth-child(3)");
+
+      menu3.addEventListener("click", () => {
+        fetch("httpS://NamGle6318.github.io/data/version2.json")
+          .then((res) => {
+            if (!res.ok) throw new Error("경로를 확인해 주세요");
+            return res.json();
+          })
+          .then((data) => {
+            let result = `<ul>`;
+            data.forEach((versions) => {
+              result += `<li>version : ${versions.version}</li>`;
+              result += `<li>codename : ${versions.codename}</li>`;
+              result += "</br>";
+            });
+            result += `</ul>`;
+
+            document.querySelector("div").innerHTML = result;
+          });
+      });
+
+      // 메뉴 4번 : MOCK_DATA.json 출력
+      // table 의 한행에
+      // id / first_name / email / gender 가 보이게 출력
+      const menu4 = document.querySelector("ul > li:nth-child(4)");
+
+      menu4.addEventListener("click", () => {
+        fetch("httpS://NamGle6318.github.io/data/MOCK_DATA.json")
+          .then((res) => {
+            if (!res.ok) throw new Error("경로를 확인해 주세요");
+            return res.json();
+          })
+          .then((data) => {
+            let result = `<table>`;
+                result += `<tr>`;
+                result += `<th>id</th>`;
+                result += `<th>first_name</th>`;
+                result += `<th>email</th>`;
+                result += `<th>gender</th>`;
+                result += `</tr>`;
+
+            data.forEach((mockData) => {
+              result += `<tr>`;
+              result += `<td>id : ${mockData.id}</td>`;
+              result += `<td>first_name : ${mockData.first_name}</td>`;
+              result += `<td>email : ${mockData.email}</td>`;
+              result += `<td>gender : ${mockData.gender}</td>`;
+              result += `</tr>`;
+            });
+            result += `</table>`;
+
+            document.querySelector("div").innerHTML = result;
+          });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+서버와 클라이언트
+
+하드웨어적 서버
+소프트웨어 서버 : Linux(Unix), Windows서버 설치된 서버
+                회사에서는 보통 Linux(Unix)
+
+서버는 추상적인 서버가 아닌, Email 담당 서버, DB 담당 서버, web 담당 서버가 있음
+
+동기식과 비동기식의 차이
+동기식 : 요청 -> 응답 -> 실행
+비동기식 : 요청 -> 응답이 오던말던 실행
+    - 지도 : 지도를 키자마자 대한민국 전체를 주는게 아닌 해당 지점으로 이동할때마다 정보를 받음
+
+
+Ajax(Asynchroronous JavaScript and XML) : 
+- 비동기식 자바스크립트와 XML(JSON) = {자바스크립트 객체}
+- 비동기식 요청처리
+    - 1. JS 코드
+    - 2. jQuery 코드
+    - 3. fetch 사용
+    - 4. axios 사용
+
+- JSON(JavaScript Object Notation) : JS 객체 문법으로 데이터 표현하기 위한 문자기반의 포맷
+    - 서버와 클라이언트가 주고받는 데이터 형식 중 하나
+- JSO은 키값에 "쌍따옴표"를 넣는다.
+    {
+      "name": "Molecule Man",
+      "age": 29,
+      "secretIdentity": "Dan Jukes",
+      "powers": ["Radiation resistance", "Turning tiny", "Radiation blast"]
+    }
+
+- JSON 배열
+[
+{
+    "key" : value,
+    "key" : value,
+    ...
+},
+{
+    "key" : value,
+    "key" : value,
+    ...
+}
+]
+
+                // res.ok == 200
+            //           400 (404-경로 틀림, 403-권한없음)
+            //           500 (서버에러)
+

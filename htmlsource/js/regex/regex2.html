@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="" method="post">
+        <div>
+            <label for="tel">이름</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div>
+            <label for="tel">전화번호</label>
+            <input type="text" name="tel" id="tel">
+        </div>
+        <button type="submit">전송</button>
+    </form>
+    <script>
+
+    // 이름 입력을 한글로 했는지 + 최소 2자리, 최대 5자리를 확인하기
+    
+    const name = document.querySelector("#name");
+    name.addEventListener("change", (e) => {
+        const regName = /^[가-힣]{2,5}$/ // 공백 민감하니 조심 
+       
+        if (!regName.test(name.value)) {
+            alert("정말 이게 이름이야? 다시 확인해봐!");
+            
+            name.select();
+            return;
+        }
+    })
+
+
+
+    // 폼 전송 시 submit 중지 후 전화번호가 원하는 형식대로 입력 되었는지 확인하기
+    
+    const tel = document.querySelector("#tel")
+    // tel.addEventListener("submit", (e) => {
+    //
+    tel.addEventListener("change", (e) => 
+    {
+        // e.target.preventDefault();
+        const regName = /^\d{3}-\d{4}-\d{4}$/; 
+        
+        if (!regName.test(tel)) {
+            alert("전화번호를 다시 입력해봐!");
+            
+            tel.select();
+            return;
+        }
+
+    })
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="exec"></p>
+    <script>
+        
+        const origin = "Javascript jQuery Ajax";
+        // 정규식 생성
+        // 1. /패턴/플래그 (보통 이걸 더 많이 씀)
+        const regEx = /Ajax/;
+        
+        // 2. new
+        // const regEx = new RegExp("Ajax"); // = /Ajax/g
+
+        // 자바 스크립트 메소드 이용
+        // exec(), test() : 정규식의 메소드임
+        // match()), search() : 정규식의 메소드가 아님
+        
+        console.log("exec() ", regEx.exec(origin)); // ['Ajax', index: 18, input: 'Javascript jQuery Ajax', groups: undefined]
+        console.log("test() ", regEx.test(origin)); // true
+        console.log("match() ", origin.match(regEx)); // ['Ajax', index: 18, input: 'Javascript jQuery Ajax', groups: undefined]
+        console.log("search() ", origin.search(regEx)); // 18
+
+        const exec = document.querySelector("#exec");
+        exec.textContent = regEx.exec(origin); // Ajax
+
+        // replace(), split() 정규식 사용해보기!
+        
+        const re = /(\w+)\s(\w+)/
+        const origin2 = "John Smith";
+        console.log("==match", origin2.match(re));
+        //['John Smith', 'John', 'Smith', index: 0, input: 'John Smith', groups: undefined]
+        // 이름의 앞 뒤를 교환 John Smith -> Smith John
+
+        console.log(origin2.replace(""))
+
+        const newName = origin2.replace(re, "$2 $1"); // $ : 정규식에서 괄호로 캡쳐한 그룹의 순서
+        console.log(newName); // Smith John
+
+        const ko = "kokokoko";
+        console.log("ko match", ko.match(/(ko)+/));
+        // ['kokokoko', 'ko', index: 0, input: 'kokokoko', groups: undefined]
+
+        console.log("ko match", ko.match(/(?:ko)+/));
+        // ['kokokoko', index: 0, input: 'kokokoko', groups: undefined]
+        // () : 캡처링
+        // (?:) : 비캡처링
+    </script>
+</body>
+</html>
