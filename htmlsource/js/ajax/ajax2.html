@@ -48,6 +48,7 @@
       <li>메뉴3</li>
       <li>메뉴4</li>
     </ul>
+    <div></div>
 
     <script>
       // 메뉴 1번 : data.txt 출력
@@ -55,7 +56,7 @@
       const menu1 = document.querySelector("ul > li:first-child");
 
       menu1.addEventListener("click", () => {
-        fetch("httpS://NamGle6318.github.io/data/data.txt")
+        fetch("https://NamGle6318.github.io/data/data.txt")
           .then((res) => {
             if (!res.ok) throw new Error("경로를 확인해 주세요");
             return res.text();
@@ -126,12 +127,12 @@
           })
           .then((data) => {
             let result = `<table>`;
-                result += `<tr>`;
-                result += `<th>id</th>`;
-                result += `<th>first_name</th>`;
-                result += `<th>email</th>`;
-                result += `<th>gender</th>`;
-                result += `</tr>`;
+            result += `<tr>`;
+            result += `<th>id</th>`;
+            result += `<th>first_name</th>`;
+            result += `<th>email</th>`;
+            result += `<th>gender</th>`;
+            result += `</tr>`;
 
             data.forEach((mockData) => {
               result += `<tr>`;
