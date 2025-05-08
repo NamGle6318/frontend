@@ -16,11 +16,11 @@
     <form action="" method="post">
       <div class="mb-3">
         <label for="mno" class="form-label">mno</label>
-        <input type="text" class="form-control" id="mno" placeholder="mno" />
+        <input type="text" class="form-control" id="mno" name="mno" placeholder="mno" />
       </div>
       <div class="mb-3">
         <label for="memoText" class="form-label">memoText</label>
-        <textarea class="form-control" id="memoText" rows="3"></textarea>
+        <textarea class="form-control" id="memoText" rows="3" name="memoText"></textarea>
       </div>
       <div>
         <button type="submit">추가</button>
@@ -37,7 +37,6 @@
         <input type="text" class="form-control" name="mno" placeholder="mno" />
         <button type="button" class="btn btn-info">메모 하나 보여주기</button>
       </h3>
-      <textarea class="form-control" name="memoText" rows="3"></textarea>
     </div>
 
     <div class="mt-5">
@@ -46,11 +45,15 @@
       <ul id="list"></ul>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
       crossorigin="anonymous"
     ></script>
-    <script src="./memo.js"></script>
+    <!-- fetch() 방식 -->
+    <!-- <script src="./memo.js"></script> -->
+    <!-- axios() 방식 -->
+    <script src="./memo2.js"></script>
   </body>
 </html>
